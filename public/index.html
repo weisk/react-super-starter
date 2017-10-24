@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="manifest" href="//<%= htmlWebpackPlugin.options.PUBLIC_URL %>/manifest.json">
+    <link rel="shortcut icon" href="//<%= htmlWebpackPlugin.options.PUBLIC_URL %>/favicon.ico">
+    <title><%= htmlWebpackPlugin.options.APP_TITLE %></title>
+  </head>
+  <body>
+    <script>window.ENV = <%= JSON.stringify(htmlWebpackPlugin.options.env) %>;</script>
+    <noscript>Please enable javascript for this page</noscript>
+    <div id="root">{{SSR}}</div>
+  </body>
+</html>
