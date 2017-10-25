@@ -89,7 +89,7 @@ let config = {
     new CopyWebpackPlugin([
       {from: 'public/favicon.ico'},
       {from: 'public/manifest.json'},
-      {from: '*.json', to: 'locale/', context: 'i18n'},
+      {from: 'i18n/*.json'},
     ]),
     extractStyles,
   ]
@@ -99,6 +99,11 @@ let config = {
 if (env.production) {
   config.plugins = [
     ...config.plugins,
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',

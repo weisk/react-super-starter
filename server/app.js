@@ -31,12 +31,15 @@ app.use(morgan('combined'));
 // Cookies
 app.use(cookieParser());
 
-// the first request should always go to SSR index
+// the first GET request should always go to SSR index
 app.get('/', universal);
+
 // static files
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
+
 // render all routes
 app.use('/', universal);
+
 // api
 app.use('/api', api);
 
