@@ -68,6 +68,14 @@ Get test coverage report:
 $ npm run test -- --coverage
 ```
 
+As the app is using <IntlProvider/> to provide i18n, all tests need to be
+injected with intlProvider to render properly.
+
+The package [enzyme-react-intl](https://www.npmjs.com/package/enzyme-react-
+intl) provides functions `{ mountWithIntl, shallowWithIntl, loadTranslation}`,
+which should be used for all tests.
+
+
 ## UI
 
 Using Ant Design React. Supports all the modern browsers and IE9+.

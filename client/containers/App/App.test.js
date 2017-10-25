@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallowWithIntl } from 'enzyme-react-intl';
 
 import App from './index';
 
 it('renders without crashing', () => {
-  shallow(<App />);
+  shallowWithIntl(<App locale="en"/>);
 });

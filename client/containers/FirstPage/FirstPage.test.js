@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallowWithIntl } from 'enzyme-react-intl';
 
 import FirstPage from './index';
 
 it('renders without crashing', () => {
-  shallow(<FirstPage />);
+  shallowWithIntl(<FirstPage />);
 })
 
