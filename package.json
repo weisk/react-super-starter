@@ -53,6 +53,7 @@
     "morgan": "^1.8.1",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.8",
+    "prop-types": "^15.6.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-intl": "^2.4.0",

@@ -1,3 +1,5 @@
 {
-  "app.hello": "Hello world of i18n!"
+  "app.hello": "Hello world of i18n!",
+  "app.english": "English",
+  "app.spanish": "Spanish"
 }

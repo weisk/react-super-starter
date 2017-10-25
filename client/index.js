@@ -6,6 +6,7 @@ import { LocaleProvider } from 'antd';
 import enUS from 'antd/lib/locale-provider/en_US';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import reactIntlLocaleEn from 'react-intl/locale-data/en';
+import reactIntlLocaleEs from 'react-intl/locale-data/es';
 import Cookie from 'js-cookie';
 
 import configureStore from './store';
@@ -26,7 +27,7 @@ function renderRoot(localeData) {
       <IntlProvider locale={locale} messages={localeData}>
         <LocaleProvider locale={enUS}>
           <BrowserRouter>
-            <App />
+            <App locale={locale}/>
           </BrowserRouter>
         </LocaleProvider>
       </IntlProvider>
@@ -37,7 +38,10 @@ function renderRoot(localeData) {
 fetch(`/i18n/${locale}.json`)
 .then((res) => res.json())
 .then((json) => {
-  addLocaleData([...reactIntlLocaleEn]);
+  addLocaleData([
+    ...reactIntlLocaleEn,
+    ...reactIntlLocaleEs
+  ]);
   renderRoot(json);
   registerServiceWorker();
 })

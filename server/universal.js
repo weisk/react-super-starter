@@ -13,13 +13,16 @@ const {default: configureStore} = require('../client/store');
 const {default: App} = require('../client/containers/App');
 
 const reactIntlLocaleEn = require('react-intl/locale-data/en');
+const reactIntlLocaleEs = require('react-intl/locale-data/es');
 
-acceptLanguage.languages(['en']);
+acceptLanguage.languages(['en', 'es']);
 addLocaleData([
-  ...reactIntlLocaleEn
+  ...reactIntlLocaleEn,
+  ...reactIntlLocaleEs,
 ]);
 const messages = {
-  en: require(`../i18n/en.json`)
+  en: require(`../i18n/en.json`),
+  es: require(`../i18n/es.json`),
 };
 
 function detectLocale(req) {
